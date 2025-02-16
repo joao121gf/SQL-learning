@@ -1,0 +1,6 @@
+SELECT *
+FROM person.person;
+
+
+
+seleciona tudo da coluna person.person
