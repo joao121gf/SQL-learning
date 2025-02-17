@@ -4,3 +4,21 @@ FROM person.person;
 
 
 seleciona tudo da coluna person.person
+
+
+
+SELECT DISTINCT * ==== Seleciona apenas dados unicos e nao os duplicados
+COUNT(*) = CONTAR O NUMERO DE LINHAS DE TAL ALGO
+TOP == FILTRAR A QUANTIDADE DE DADOS RETORNADA
+
+ORDER BY = Ordenar os resultados em ordem crescente ou decrescente
+ORDER BY coluna1 asc/desc
+
+BETWEEN = ENCONTRAR RESULTADO ENTRE UM VALOR MINIMO E UM MAXIMO
+
+IN = Usa junto com o WHERE ele vai fazer uma busca dos valores que voce usar
+WHERE FirstName IN ('Rob', 'Roberto')
+
+
+LIKE = SERVE PRA ENCONTRAR UMA PESSOA ''PARECIDO'' COM .... 
+WHERE firstName like 'ovi%'
