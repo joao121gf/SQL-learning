@@ -9,7 +9,7 @@ FROM PERSON.Person as P
 INNER JOIN person.EmailAddress PE on p.BusinessEntityID = pe.BusinessEntityID
 
 
---Queremos os nomes dos produtos e as informacoes de suas subcategorias e o preço de cada um
+--Queremos os nomes dos produtos e as informacoes de suas subcategorias e o preï¿½o de cada um
 
 SELECT TOP 10 * FROM Production.Product
 
@@ -40,3 +40,12 @@ FROM Person.PhoneNumberType AS PersonNumber
 INNER JOIN Person.PersonPhone AS PersonPhone on
 PersonPhone.PhoneNumberTypeID = PersonNumber.PhoneNumberTypeID
 
+--Tabela person.stateprovince e person.adress
+-- AdressID, City, StateProvidencID, Nome do estado
+SELECT * FROM Person.StateProvince
+SELECT * FROM Person.Address
+
+
+SELECT a.AddressID, a.City, a.StateProvinceID, s.Name
+FROM Person.Address AS a
+INNER JOIN Person.StateProvince AS s on a.StateProvinceID = s.StateProvinceID

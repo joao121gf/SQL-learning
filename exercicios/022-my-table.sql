@@ -1,0 +1,17 @@
+CREATE TABLE AddressCustomers1(
+	AddressID INT  PRIMARY KEY,
+	City VARCHAR(100) NOT NULL
+)
+
+CREATE TABLE Customers (
+	CustomerID INT PRIMARY KEY,
+	Name VARCHAR(100) NOT NULL,
+	AddressID INT NOT NULL,
+	FOREIGN KEY (AddressID) REFERENCES AddressCustomers1(AddressID),
+	HireDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+)
+
+SELECT * FROM Customers
+
+
+
