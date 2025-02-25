@@ -44,5 +44,9 @@ voce so consegue usar o having depois que os dados ja estao agrupados
 INNER JOIN === VAI PEGAR UMA COLUNA EM COMUM DE OUTRA TABELA E VAI UNIR COM A QUE VC ESTA AGORA
 
 
+DATEPART = DATEPART(MONTH, Tabela)
+
+
+INSERT INTO
 
 
