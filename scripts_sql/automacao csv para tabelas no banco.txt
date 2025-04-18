@@ -1,0 +1,42 @@
+# %%
+#Automacao para criar tabelas dos arquivos CSV
+#importacoes
+import pandas as pd
+import psycopg2
+import os
+from sqlalchemy import create_engine
+
+
+# %%
+#Configurando banco
+user = 'postgres'
+password = 'postgres'
+host = 'localhost'
+port = '5432'
+database = 'bike_store'
+
+engine = create_engine(f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}')
+
+# %%
+#Caminho da pastas com o CSVS
+pastas_csv = "C:/Users/Gioher/Desktop/Programação/estudos/postgre_sql/Projetos/05_Bike_Store/data/raw"
+
+
+# %%
+# Percorre todos os arquivos .csv da pasta
+for arquivo in os.listdir(pastas_csv):
+    if arquivo.endswith('.csv'):
+        caminho_completo = os.path.join(pastas_csv, arquivo)
+        
+        # Nome da tabela baseado no nome do arquivo (sem extensão)
+        nome_tabela = os.path.splitext(arquivo)[0].lower()
+        
+        # Lê o CSV
+        df = pd.read_csv(caminho_completo)
+
+        # Cria a tabela e importa os dados
+        df.to_sql(nome_tabela, engine, if_exists='replace', index=False)
+        
+        print(f"Tabela '{nome_tabela}' criada com sucesso!")
+
+
