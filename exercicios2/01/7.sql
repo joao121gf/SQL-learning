@@ -1,0 +1,1 @@
+"172.31.20.126"	"db01"	"postgres"	"PostgreSQL 17.2 on aarch64-unknown-linux-gnu, compiled by gcc (GCC) 12.4.0, 64-bit"
